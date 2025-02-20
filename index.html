@@ -70,18 +70,18 @@
   <p style="text-align: justify;"><font color="000000"> Symbolic music generation involves the automated creation of musical scores, which plays a crucial role in art and music composition. This task is inherently challenging due to the intricate temporal-spatial arrangements, especially when dealing with multi-track polyphonic music . One prevalent approach is to convert music scores into discrete tokens and utilize transformer-based language models for subsequent generation. However, flattening music scores can disrupt their inherent structure, resulting in overly long sequences that hinder effective learning. An alternative approach focuses on developing a latent representation through the use of music structure-aware encoders and decoders, incorporating tree and graph structures. However, this method may only generate music pieces spanning a few bars, as a single latent representation may not be adequate for capturing the nuances of longer compositions. In this study, we introduce MuGraphCodec, a more compact and structure-aware neural discrete representation of symbolic music designed for efficient long music generation. Specifically, a graph structure tailored for polyphonic music is designed to preserve the inherent musical arrangement effectively. Additionally, we utilize a GNN-based encoder to capture per-bar features. To obtain discrete representation, residual vector quantization (RVQ) is employed on these per-bar features. Finally, a GNN-based decoder is used to reconstruct the symbolic music. MuGraphCodec can be seamlessly integrated into a language model framework for generation tasks, whose quality is further demonstrated by experiments. </font></p>
   <!-- <br></br> -->
   <figure>
-  <p align="center"><img src="MusicHAG.jpg" width="80%"  class="center"/></p>
+  <p align="center"><img src="MusicHAG.jpg" width="50%"  class="center"/></p>
  
   <figcaption style="text-align: center;">
-  <b>Figure 1:</b>  Overview of PyramidCodec. (a) The illustration of pyramid encoding, which takes multi-scale features as input and outputs discrete hierarchical codecs and continuous hierarchical features after quantization. (b) The illustration of pyramid decoding and multi-scale ground truth construction for hierarchical training.
+  <b>Figure 1:</b>  Overview of MusicHAG. (a) A piano-roll-like music score. For multi-track polyphonic symbolic music, there exists many instruments, one or more notes may occur with every individual instrument at a certain time, and every note may have different pitch, duration and velocity; (b) Music structure and statistic features, which are used for constructing the edges of MusicHAG; (c) Music Graph, containing nodes and edges.
   </figcaption>
   </figure>
 
   <figure>
-  <p align="center"><img src="overview.jpg" width="80%"  class="center"/></p>
+  <p align="center"><img src="overview.jpg" width="50%"  class="center"/></p>
  
   <figcaption style="text-align: center;">
-  <b>Figure 1:</b>  Overview of PyramidCodec. (a) The illustration of pyramid encoding, which takes multi-scale features as input and outputs discrete hierarchical codecs and continuous hierarchical features after quantization. (b) The illustration of pyramid decoding and multi-scale ground truth construction for hierarchical training.
+  <b>Figure 2:</b>  Overview of MuGraphCodec. Although MusicHAG captures the local music structure of each bar, it is not effective for long-form music. We separate local spatial and global temporal modeling. A language model is used for global temporal modeling. To facilitate this, we propose MuGraphCodec, which learns a compact discrete neural representation using RVQ technology.
   </figcaption>
   </figure>
 
@@ -185,7 +185,9 @@
   <h2 id="TTS" style="text-align:center;"><font color="000000">Long-form Music Generation from Scratch</font></h2>
   <p style="text-align: justify;"><font color="000000"> The following samples are generated using PyramidCodec for tokenizer and tiny-GPT2 (40M trainable parameters) as language model. We recommend that listeners focus on aspects such as coherence, rhythm, and adherence to musical conventions.
   <ul style="list-style-type:square">
+-->
 
+<!--
     <br></br>
     <table align="center">
     <thead>
@@ -216,9 +218,7 @@
         <td style=" text-align: center"><audio controls="controls" ><source src="samples\pyramid_long\89.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 	<td style=" text-align: center"><audio controls="controls" ><source src="samples\pyramid_long\78.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 	<td style=" text-align: center"><audio controls="controls" ><source src="samples\pyramid_long\68.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-
 -->
-
 
 
 
