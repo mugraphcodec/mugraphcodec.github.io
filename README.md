@@ -1,1 +1,1 @@
-# This is the demo page for HierCodec
+# This is the demo page for MuGraphCodec

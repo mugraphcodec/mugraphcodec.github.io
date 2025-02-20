@@ -46,7 +46,7 @@
 	<main role="main">
 		<article itemscope itemtype="https://schema.org/BlogPosting">
 
-            <h1 class="entry-title" itemprop="headline" align="center" ><font color="000000"  ><b>PyramidCodec: Hierarchical Codec for Long-form Music Generation in Audio Domain</b></font></h1>
+            <h1 class="entry-title" itemprop="headline" align="center" ><font color="000000"  ><b>MuGraphCodec: Enhancing Long Music Generation through Vector Quantization on Symbolic Music Graph</b></font></h1>
 			
 			<section itemprop="entry-text">
 				<br>
@@ -70,7 +70,7 @@
   <p style="text-align: justify;"><font color="000000"> Symbolic music generation involves the automated creation of musical scores, which plays a crucial role in art and music composition. This task is inherently challenging due to the intricate temporal-spatial arrangements, especially when dealing with multi-track polyphonic music . One prevalent approach is to convert music scores into discrete tokens and utilize transformer-based language models for subsequent generation. However, flattening music scores can disrupt their inherent structure, resulting in overly long sequences that hinder effective learning. An alternative approach focuses on developing a latent representation through the use of music structure-aware encoders and decoders, incorporating tree and graph structures. However, this method may only generate music pieces spanning a few bars, as a single latent representation may not be adequate for capturing the nuances of longer compositions. In this study, we introduce MuGraphCodec, a more compact and structure-aware neural discrete representation of symbolic music designed for efficient long music generation. Specifically, a graph structure tailored for polyphonic music is designed to preserve the inherent musical arrangement effectively. Additionally, we utilize a GNN-based encoder to capture per-bar features. To obtain discrete representation, residual vector quantization (RVQ) is employed on these per-bar features. Finally, a GNN-based decoder is used to reconstruct the symbolic music. MuGraphCodec can be seamlessly integrated into a language model framework for generation tasks, whose quality is further demonstrated by experiments. </font></p>
   <!-- <br></br> -->
   <figure>
-  <p align="center"><img src="MusicHAG.jpg" width="100%"  class="center"/></p>
+  <p align="center"><img src="MusicHAG.jpg" width="80%"  class="center"/></p>
  
   <figcaption style="text-align: center;">
   <b>Figure 1:</b>  Overview of PyramidCodec. (a) The illustration of pyramid encoding, which takes multi-scale features as input and outputs discrete hierarchical codecs and continuous hierarchical features after quantization. (b) The illustration of pyramid decoding and multi-scale ground truth construction for hierarchical training.
@@ -78,7 +78,7 @@
   </figure>
 
   <figure>
-  <p align="center"><img src="overview.jpg" width="100%"  class="center"/></p>
+  <p align="center"><img src="overview.jpg" width="80%"  class="center"/></p>
  
   <figcaption style="text-align: center;">
   <b>Figure 1:</b>  Overview of PyramidCodec. (a) The illustration of pyramid encoding, which takes multi-scale features as input and outputs discrete hierarchical codecs and continuous hierarchical features after quantization. (b) The illustration of pyramid decoding and multi-scale ground truth construction for hierarchical training.
@@ -111,6 +111,8 @@
 <!-- <li><font color="061E61"> In order to improve the inference speed at each sampling step, ResGrad uses the same U-Net architecture in GradTTS but with twice fewer channels to reduce the model size (2.0M in ResGrad vs 7.6M in GradTTS). </font></li> -->
 </ul>
 
+
+<!--
 <table align="center">
   <thead>
   <tr>
@@ -165,7 +167,7 @@
     <td style=" text-align: center"><audio controls="controls" ><source src="samples\pyramid\0_8_8e11c74c97ab39164e697240b17de89c.wav" autoplay/>Your browser does not support the audio element.</audio></td>
     <td style=" text-align: center"><audio controls="controls" ><source src="samples\pyramid\0_7ff6852a5c64d711f54540a0326f89c.wav" autoplay/>Your browser does not support the audio element.</audio></td>
     <td style=" text-align: center"><audio controls="controls" ><source src="samples\pyramid\0_7_76125b38152ed4779fb908a57ae07383.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-
+-->
 
   </tr>
   </thead>
@@ -178,7 +180,7 @@
 
 
 
- 
+<!--
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded"> 
   <h2 id="TTS" style="text-align:center;"><font color="000000">Long-form Music Generation from Scratch</font></h2>
   <p style="text-align: justify;"><font color="000000"> The following samples are generated using PyramidCodec for tokenizer and tiny-GPT2 (40M trainable parameters) as language model. We recommend that listeners focus on aspects such as coherence, rhythm, and adherence to musical conventions.
