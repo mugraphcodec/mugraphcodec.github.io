@@ -1,1 +1,1 @@
-# mugraphcodec.github.io
+# This is the demo page for HierCodec
